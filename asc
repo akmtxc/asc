@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+echo "Program name: "
+read PROGNAME
+
+asp checkout $PROGNAME
+#I tryed to start makepkg without cd but i can't, if u know how to pls help.
+#PROGPATH="$(find $PROGNAME -name PKGBUILD -type f -print | rg repos)"
+cd ~/$PROGNAME/trunk/
+makepkg -si
+rm -rf ~/$PROGNAME
